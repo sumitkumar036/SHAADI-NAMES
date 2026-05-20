@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सुमित संग कांति - विवाह आमंत्रण परिवार सूची</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Yatra+One&family=Rozha+One&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Noto Serif Devanagari', serif;
+            background-color: #fcf8f2;
+            color: #4a2c11;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            background-image: radial-gradient(#f3e1cb 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: #ffffff;
+            border: 3px double #b38646;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        /* Decorative Corner Ornaments */
+        .container::before {
+            content: "◆";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #b38646;
+            font-size: 18px;
+        }
+        .container::after {
+            content: "◆";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #b38646;
+            font-size: 18px;
+        }
+
+        .main-header {
+            text-align: center;
+            border-bottom: 2px dashed #b38646;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .wedding-symbol {
+            font-size: 30px;
+            color: #d32f2f;
+            margin-bottom: 10px;
+            letter-spacing: 5px;
+        }
+
+        h1 {
+            font-family: 'Yatra One', cursive;
+            color: #d32f2f;
+            margin: 5px 0;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .date {
+            font-family: 'Rozha One', serif;
+            font-size: 1.5rem;
+            color: #b38646;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        .groom-section {
+            background-color: #fff9f2;
+            border-left: 5px solid #d32f2f;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .groom-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #d32f2f;
+            margin-bottom: 8px;
+        }
+
+        .parents {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: #5d3a1a;
+        }
+
+        .address {
+            font-size: 1.05rem;
+            color: #6d4c41;
+            line-height: 1.6;
+            background: #f5ece1;
+            padding: 12px 15px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 25px;
+        }
+
+        .section-box {
+            background: #fffdfa;
+            border: 1px solid #ebd0a7;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .section-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(179, 134, 70, 0.15);
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            color: #d32f2f;
+            border-bottom: 1px solid #b38646;
+            padding-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: "🌸 ";
+            font-size: 0.9rem;
+            margin-right: 8px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #f5ece1;
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+        
+        li:last-child {
+            border-bottom: none;
+        }
+
+        .couple-names {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .male-name {
+            font-weight: 600;
+            color: #4a2c11;
+        }
+
+        .female-name {
+            color: #8d5b27;
+            font-weight: 600;
+        }
+
+        .names-list {
+            line-height: 1.8;
+            color: #4a2c11;
+            font-size: 1.05rem;
+        }
+
+        .footer-decorative {
+            text-align: center;
+            margin-top: 40px;
+            color: #b38646;
+            font-size: 24px;
+            letter-spacing: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 20px 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- शीर्ष लेख (Header) -->
+    <div class="main-header">
+        <div class="wedding-symbol">🔱 🌸 🔱</div>
+        <h1>सुमित संग कांति</h1>
+        <div class="date">२८ अप्रैल २०२६ — तिलक</div>
+        <div class="date">३ मई २०२६ — विवाह</div>
+    </div>
+
+    <!-- वर एवं माता-पिता का विवरण -->
+    <div class="groom-section">
+        <div class="groom-name">वर: सुमित कुमार</div>
+        <div class="parents"><strong>सुपुत्र:</strong> श्री नेपाल सिंह एवं श्रीमती ललिता देवी</div>
+        <div class="address">
+            <strong>स्थायी निवास पता:</strong><br>
+            ग्राम - रायपुरा, पोस्ट - आर. बी. नगर,<br>
+            जिला - औरंगाबाद (बिहार)
+        </div>
+    </div>
+
+    <!-- पारिवारिक ग्रिड (Grid Layout) -->
+    <div class="grid-container">
+        
+        <!-- दादा - दादी -->
+        <div class="section-box">
+            <h2>दादा - दादी (स्वर्गीय)</h2>
+            <ul>
+                <li><span class="male-name">स्वर्गीय श्री प्रभु सिंह</span></li>
+                <li><span class="female-name">स्वर्गीय श्रीमती अधिकारी देवी</span></li>
+            </ul>
+        </div>
+
+        <!-- नाना -->
+        <div class="section-box">
+            <h2>नाना</h2>
+            <ul>
+                <li><span class="male-name">श्री सुदर्शन सिंह</span></li>
+            </ul>
+        </div>
+
+        <!-- चाचा - चाची -->
+        <div class="section-box">
+            <h2>चाचा - चाची</h2>
+            <ul>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name"></span> 
+                        <span class="female-name">हीरामणि</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री अशोक सिंह</span> 
+                        <span class="female-name">श्रीमती यशवंती देवी</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री आलोक सिंह</span> 
+                        <span class="female-name">श्रीमती सुमित्रा देवी</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री बिनोड सिंह</span> 
+                        <span class="female-name">श्रीमती पूजा देवी</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री छोटू सिंह</span> 
+                        <span class="female-name">श्रीमती पुनीता देवी</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- भैया - भाभी -->
+        <div class="section-box">
+            <h2>भैया - भाभी</h2>
+            <ul>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री रणजीत कुमार</span> 
+                        <span class="female-name">श्रीमती निशा कुमारी</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री संजीत कुमार</span> 
+                        <span class="female-name">श्रीमती तृप्ति दयाल</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री संजय कुमार</span> 
+                        <span class="female-name">श्रीमती आरती कुमारी</span>
+                    </div>
+                </li>
+                <li><span class="male-name">सोनू कुमार</span></li>
+                <li><span class="male-name">प्रिंस कुमार</span></li>
+                <li><span class="male-name">विशाल कुमार</span></li>
+                <li><span class="male-name">आयुष कुमार</span></li>
+            </ul>
+        </div>
+
+        <!-- फूफा - बुआ -->
+        <div class="section-box">
+            <h2>फूफा - बुआ (फुआ)</h2>
+            <ul>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री जय सिंह</span> 
+                        <span class="female-name">श्रीमती विद्यावती देवी</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री नरेंद्र सिंह</span> 
+                        <span class="female-name">श्रीमती शीला देवी</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री उमेश सिंह</span> 
+                        <span class="female-name">श्रीमती लीलावती देवी</span>
+                    </div>
+                </li>
+                <li><span class="male-name">श्री जोगेंद्र सिंह</span></li>
+            </ul>
+        </div>
+
+        <!-- मौसा - मौसी -->
+        <div class="section-box">
+            <h2>मौसा - मौसी</h2>
+            <ul>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री देवपूजन सिंह</span> 
+                        <span class="female-name">श्रीमती गीता देवी</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- मामा - मामी -->
+        <div class="section-box">
+            <h2>मामा - मामी</h2>
+            <ul>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री नरेंद्र सिंह</span> 
+                        <span class="female-name">श्रीमती मालती देवी</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री सुनील सिंह</span> 
+                        <span class="female-name">श्रीमती ज्ञांती देवी</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- जीजा - बहन -->
+        <div class="section-box">
+            <h2>जीजा - बहन</h2>
+            <ul>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री राजू सिंह</span> 
+                        <span class="female-name">श्रीमती रेनू सिंह</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री प्रफुल कुमार सिंह</span> 
+                        <span class="female-name">श्रीमती रंभा सिंह</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री राजेश सिंह</span> 
+                        <span class="female-name">श्रीमती रजनी कुमारी</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री पवन सिंह</span> 
+                        <span class="female-name">श्रीमती रीमा कुमारी</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री विवेक सिंह</span> 
+                        <span class="female-name">श्रीमती निशा सिंह</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="names-list">
+                        <strong>बहनें:</strong> पूजा, मनीषा, निभा, रिचा, रिया, जिया
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- भतीजा - भतीजी -->
+        <div class="section-box">
+            <h2>भतीजा - भतीजी</h2>
+            <div class="names-list">
+                निशांत, त्रिशला, ऋषांक, प्रांशी, चिन्मय
+            </div>
+        </div>
+
+        <!-- भगिना - भगिनी -->
+        <div class="section-box">
+            <h2>भगिना - भगिनी (भांजा - भांजी)</h2>
+            <div class="names-list">
+                गोलू, खुशी, इच्छा, लकी, बाजीराव,रुद्र, दिव्यांश, टकुआ
+            </div>
+        </div>
+
+    </div>
+
+    <!-- फुटर -->
+    <div class="footer-decorative">
+        🕊️ ✨ 🌸 ✨ 🕊️
+    </div>
+
+        <div class="groom-section">
+        <div class="groom-name">कांति कुमारी</div>
+        <div class="parents"><strong>सुपुत्री:</strong> श्री संजय सिंह एवं श्रीमती शांति देवी</div>
+        <div class="address">
+            <strong>स्थायी निवास पता:</strong><br>
+            ग्राम + पोस्ट - रजबरिया,,<br>
+            थाना - नवीनगर,<br>
+            जिला - औरंगाबाद (बिहार)
+        </div>
+
+
+         <div class="section-box">
+            <h2>नाना - नानी</h2>
+            <ul>
+                <li>
+                    <div class="couple-names">
+                        <span class="male-name">श्री रामचंद्र सिंह</span> 
+                        <span class="female-name">श्रीमती विभा देवी</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+          <div class="section-box">
+            <h2>भाई</h2>
+            <ul>
+                <li><span class="male-name">सत्यम सिंह</span></li>
+                <li><span class="male-name">शिवम सिंह</span></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
